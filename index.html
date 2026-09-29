@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      margin: 0;
+    }
+    h2 { color: #ff0000; margin-bottom: 10px; text-align: center; }
+    p { color: #cccccc; font-size: 14px; text-align: center; margin-bottom: 20px; }
+    .card-btn {
+      width: 100%;
+      max-width: 280px;
+      padding: 12px 15px;
+      margin: 8px 0;
+      background: #2a2a2a;
+      border: 2px solid #ff0000;
+      color: #ffffff;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-align: left;
+    }
+    .card-btn:hover {
+      background: #ff0000;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    #result {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      background: #222;
+      border: 1px dashed #666;
+      display: none;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎲 微星解密室 - 抽取話題卡</h2>
+  <p>請點擊下方任一按鈕抽取你今天的話題：</p>
+
+  <button class="card-btn" onclick="selectCard(1)">🔴 1 號卡：品牌印象</button>
+  <button class="card-btn" onclick="selectCard(2)">🟢 2 號卡：職涯與文化嚮往</button>
+  <button class="card-btn" onclick="selectCard(3)">🟡 3 號卡：靈魂敲碗（發問 HR）</button>
+
+  <div id="result"></div>
+
+  <script>
+    function selectCard(num) {
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'block';
+      if(num === 1) {
+        resultDiv.innerHTML = "<b style='color:#ff4d4d;'>你抽中了【1 號卡：品牌印象】！</b><br>請前往 <b>左邊圓凳區</b> 踩點並開麥交流！";
+      } else if(num === 2) {
+        resultDiv.innerHTML = "<b style='color:#4dff4d;'>你抽中了【2 號卡：職涯嚮往】！</b><br>請前往 <b>中間白桌沙發區</b> 踩點並開麥交流！";
+      } else if(num === 3) {
+        resultDiv.innerHTML = "<b style='color:#ffd700;'>你抽中了【3 號卡：靈魂敲碗】！</b><br>請前往 <b>右邊黑桌沙發區</b> 踩點向 HR 現場發問！";
+      }
+    }
+  </script>
+
+</body>
+</html>
